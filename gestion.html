@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gestion</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navContainer">
+                <div class="leftBox">
+                    <h1 class="headerTitle"><span id="headShopName"></span></h1>
+                </div>
+                <div class="rightBox">
+                    <ul class="navbarList">
+                        <li><a href="#">Test</a></li>
+                        <li><a href="#">Test</a></li>
+                        <li><a href="#">Test</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="data-container">
+
+        <div class="items-table">
+            <table id="itemsTable">
+                <tr>
+                    <th>Código</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Vendidos</th>
+                    <th>Acciones</th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebae products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+  
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAP6DLVy4dAgWTIFxPtPYcmyLTPQJcdwr0",
+        authDomain: "item-management-project.firebaseapp.com",
+        projectId: "item-management-project",
+        storageBucket: "item-management-project.appspot.com",
+        messagingSenderId: "555331897361",
+        appId: "1:555331897361:web:e0c0324398d359bf7e09b0"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="js/general.js"></script>
+    <script src="js/gestion.js"></script>
+</body>
+</html>
