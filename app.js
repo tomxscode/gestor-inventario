@@ -132,7 +132,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           editForm['itemBarcode'].value = doc.data().barcode;
           editForm['itemCost'].value = doc.data().cost;
           editForm['itemPrice'].value = doc.data().price;
-          editForm['itemQuant'].value = doc.data().quant;
+          //editForm['itemQuant'].value = doc.data().quant;
 
           modal.style.display = 'block';
 

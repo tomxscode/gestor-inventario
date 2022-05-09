@@ -26,8 +26,8 @@ const getProducts = () => db.collection('products').get();
 const getProduct = (id) => db.collection('products').doc(id).get();
 // ongetitems
 const onGetProducts = (callback) => db.collection('products').onSnapshot(callback);
-const updateProduct = (id, updatedProduct) =>
-    db.collection('products').doc(id).update(updatedProduct);
+const updateProduct = (id, updateItem) =>
+    db.collection('products').doc(id).update(updateItem);
 const deleteProduct = id => db.collection('products').doc(id).delete();
 
 window.onload = function() {
@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 <td>${product.code}</td>
                 <td>${product.name}</td>
                 <td>${product.quant}</td>
-                <td>${product.price}</td>
+                <td>$${product.price}</td>
                 <td>${product.sold}</td>
                 <td class="tableActions">
                     <button class="minibtn tooltip info" data-id="${product.id}">
@@ -91,6 +91,18 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 btn.addEventListener('click', async(e) => {
                     await deleteProduct(e.target.dataset.id);
                     console.log('borrado')
+                })
+            })
+            const btnsRemove = document.querySelectorAll('.remove');
+            btnsRemove.forEach(btn => {
+                btn.addEventListener('click', async(e) => {
+                    id = e.target.dataset.id;
+                    updateProduct(id, {
+                        code: "hola",
+                        name: "buen dia",
+                        quant: 1,
+                        sold: 1
+                    })
                 })
             })
         })
