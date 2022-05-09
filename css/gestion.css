@@ -94,3 +94,34 @@ button {
 .close:focus {
     color: #f44336;
 }
+
+#itemsTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#itemsTable td,
+#itemsTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#itemsTable tr {
+    background-color: var(--mainText);
+    color: var(--secondText);
+}
+
+#itemsTable tr:hover {
+    background-color: var(--secondaryShadow);
+}
+
+#itemsTable th {
+    padding: 12px 0 12px 10px;
+    text-align: left;
+    background-color: var(--secondary);
+    color: var(--mainText);
+}
+
+.data-container {
+    margin: .5rem 1rem;
+}
