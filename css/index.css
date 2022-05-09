@@ -1,0 +1,36 @@
+@import "./general.css";
+
+header {
+    background-color: var(--main);
+}
+
+.navContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    color: var(--mainText);
+}
+
+.headerTitle {
+    font-size: var(--titleSize);
+    background-color: var(--mainShadow);
+    padding: 0.5rem;
+    border: 3px solid white;
+}
+
+.navbarList {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.navbarList > li {
+    font-size: var(--contentSize);
+    margin-left: 0.5rem;
+}
+
+.navbarList > li > a {
+    color: var(--mainText);
+}
