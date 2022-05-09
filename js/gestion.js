@@ -7,7 +7,8 @@ const db = firebase.firestore();
 const
     headShopName = document.querySelector('#headShopName')
     // Tabla de items
-    itemsTable = document.querySelector('#itemsTable')
+    itemsTable = document.querySelector('#itemsTable'),
+    addProductForm = document.querySelector('#addProductForm')
     ;
 
 // Variables
@@ -37,6 +38,16 @@ window.onload = function() {
 
 window.addEventListener('DOMContentLoaded', async (e) => {
     onGetProducts((querySnapshot) => {
+        itemsTable.innerHTML = `
+            <tr>
+                <th>Código</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Vendidos</th>
+                <th>Acciones</th>
+            </tr>
+        `;
         querySnapshot.forEach(doc => {
             const product = doc.data();
             product.id = doc.id;
@@ -51,4 +62,19 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             </tr>`
         })
     })
+})
+
+addProductForm.addEventListener('submit', async(e) => {
+    const
+        code = addProductForm['code'].value,
+        name = addProductForm['name'].value,
+        quant = addProductForm['quant'].value,
+        price = addProductForm['price'].value
+        ;
+    e.preventDefault();
+
+    await addProduct(code, name, parseInt(quant), parseInt(price), 0);
+    addProductForm.reset();
+    let modal = document.querySelector('#addProductModal');
+    modal.style.display = 'none';
 })
