@@ -50,3 +50,23 @@
     background-color: var(--secondTxtShadow);
     cursor: not-allowed;
 }
+
+.minibtn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    transition: background-color .3s;
+}
+
+.info { background-color: #3498db; }
+.info:hover { background-color: #2980b9; }
+.edit { background-color: #f1c40f; }
+.edit:hover { background-color: #f39c12; }
+.add { background-color: #2ecc71; }
+.add:hover { background-color: #27ae60; }
+.remove { background-color: #e74c3c; }
+.remove:hover { background-color: #c0392b; }
+.delete { background-color: #c0392b; }
+.delete:hover { background-color: #e74c3c; }
+

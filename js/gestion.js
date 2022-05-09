@@ -58,8 +58,41 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 <td>${product.quant}</td>
                 <td>${product.price}</td>
                 <td>${product.sold}</td>
-                <td>proximamente</td>
+                <td class="tableActions">
+                    <button class="minibtn tooltip info" data-id="${product.id}">
+                    <span class="material-symbols-outlined">
+                    info
+                    </span>
+                    </button>
+                    <button class="minibtn tooltip edit" data-id="${product.id}">
+                    <span class="material-symbols-outlined">
+                    edit
+                    </span>
+                    </button>
+                    <button class="minibtn tooltip add" data-id="${product.id}">
+                    <span class="material-symbols-outlined">
+                    add
+                    </span>
+                    </button>
+                    <button class="minibtn tooltip remove" data-id="${product.id}">
+                    <span class="material-symbols-outlined">
+                    remove
+                    </span>
+                    </button>
+                    <button class="minibtn tooltip delete" data-id="${product.id}">
+                    <span class="material-symbols-outlined">
+                    delete
+                    </span>
+                    </button>
+                </td>
             </tr>`
+            const btnsDelete = document.querySelectorAll('.delete');
+            btnsDelete.forEach(btn => {
+                btn.addEventListener('click', async(e) => {
+                    await deleteProduct(e.target.dataset.id);
+                    console.log('borrado')
+                })
+            })
         })
     })
 })
