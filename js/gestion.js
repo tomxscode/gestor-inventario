@@ -8,7 +8,9 @@ const
     headShopName = document.querySelector('#headShopName')
     // Tabla de items
     itemsTable = document.querySelector('#itemsTable'),
-    addProductForm = document.querySelector('#addProductForm')
+    addProductForm = document.querySelector('#addProductForm'),
+    closeModal2 = document.querySelector('#closeModal2'),
+    modal2 = document.querySelector('.modal2')
     ;
 
 // Variables
@@ -69,16 +71,6 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                     edit
                     </span>
                     </button>
-                    <button class="minibtn tooltip add" data-id="${product.id}">
-                    <span class="material-symbols-outlined">
-                    add
-                    </span>
-                    </button>
-                    <button class="minibtn tooltip remove" data-id="${product.id}">
-                    <span class="material-symbols-outlined">
-                    remove
-                    </span>
-                    </button>
                     <button class="minibtn tooltip delete" data-id="${product.id}">
                     <span class="material-symbols-outlined">
                     delete
@@ -105,6 +97,44 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                     })
                 })
             })
+            const btnsInfo = document.querySelectorAll('.info');
+            btnsInfo.forEach(btn => {
+                btn.addEventListener('click', async(e) => {
+                    modal2.style.display = 'block';
+                    //const doc = await getProduct(e.target.dataset.id);
+                    id = e.target.dataset.id; 
+                    // Variables
+                    let 
+                        infoTitle = document.querySelector('#infoTitle'),
+                        productCode = document.querySelector('#productCode'),
+                        productQuant = document.querySelector('#productQuant'),
+                        productPrice = document.querySelector('#productPrice'),
+                        productSold = document.querySelector('#productSold'),
+                        // información
+                        productTotalSold = document.querySelector('#productTotalSold')
+                        ;
+
+                    const task = await getProduct(e.target.dataset.id)
+
+                    let
+                        pName = task.data().name,
+                        pCode = task.data().code,
+                        pQuant = parseInt(task.data().quant),
+                        pPrice = parseInt(task.data().price),
+                        pSold = parseInt(task.data().sold)
+                    ;
+
+                    infoTitle.innerHTML = pName;
+                    productCode.innerHTML = pCode;
+                    productQuant.innerHTML = pQuant;
+                    productPrice.innerHTML = `$${pPrice}`;
+                    productSold.innerHTML = pSold;
+
+                    // sector de información
+                    let iTotalSold = pSold * pPrice;
+                    productTotalSold.innerHTML = `$${iTotalSold}`
+                })
+            })
         })
     })
 })
@@ -122,4 +152,8 @@ addProductForm.addEventListener('submit', async(e) => {
     addProductForm.reset();
     let modal = document.querySelector('#addProductModal');
     modal.style.display = 'none';
+})
+
+closeModal2.addEventListener('click', function() {
+    modal2.style.display = "none";
 })

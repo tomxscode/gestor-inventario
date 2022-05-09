@@ -2,7 +2,8 @@
 let
     btn = document.querySelector('#addProductBtn'),
     modal = document.querySelector('#addProductModal'),
-    close = document.querySelector('#closeModal')
+    close = document.querySelector('#closeModal'),
+    modal2 = document.querySelector('.modal2')
     ;
 
 btn.addEventListener('click', function() {

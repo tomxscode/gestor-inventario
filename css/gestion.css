@@ -61,7 +61,7 @@ button {
     padding: 16px;
 }
 
-.modal {
+.modal, .modal2 {
     display: none;
     position: fixed;
     z-index: 1;/* lo pone encima de todo */
@@ -162,4 +162,21 @@ button {
   .tableActions {
       display: flex;
       flex-direction: row;
+  }
+
+  .infoContainer {
+      padding: 1rem 1.5rem;
+  }
+
+  #infoTitle {
+      font-size: var(--subtitleSize);
+  }
+
+  .infoContent {
+      padding: 1rem 2rem;
+      font-size: var(--contentSize);
+  }
+
+  ul > hr {
+      margin: 1rem 0;
   }
