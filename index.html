@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Tienda</title>
+</head>
+
+<body>
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <h3>Menú de edición</h3>
+        </div>
+        <div class="modal-close" id="closeModal">
+          <span class="close">&times;</span>
+        </div>
+      </div>
+      <form id="editForm">
+        <input type="text" id="itemName">
+        <input type="text" id="itemBarcode">
+        <input type="number" id="itemCost">
+        <input type="number" id="itemPrice">
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </form>
+    </div>
+  </div>
+  <div class="add-item-form modal" id="addItemModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <h3>Agregar un item</h3>
+        </div>
+        <div class="modal-close" id="closeAddModal">
+          <span class="close">&times;</span>
+        </div>
+      </div>
+      <form id="addDataForm">
+        <div class="form-container">
+          <div class="form-input-container">
+            <div class="form-input">
+              <h3>Item</h3>
+              <input type="text" id="itemName">
+            </div>
+            <div class="form-input">
+              <h3>Código de barras</h3>
+              <input type="number" id="itemBarcode">
+            </div>
+          </div>
+          <div class="form-input-container">
+            <div class="form-input">
+              <h3>Coste</h3>
+              <input type="number" id="itemCost">
+            </div>
+            <div class="form-input">
+              <h3>Precio venta</h3>
+              <input type="number" id="itemPrice">
+            </div>
+          </div>
+          <div class="form-input-container">
+            <div class="form-input">
+              <h3>Cantidad inicial</h3>
+              <input type="number" id="itemQuant">
+            </div>
+          </div>
+          <div class="form-input-container btns-container">
+            <button class="btn btn-primary" id="addItem">Añadir</button>
+            <button class="btn btn-clear" type="reset">Limpiar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <header>
+    <div class="firstLine">
+      <h1>Manejo de inventario</h1>
+    </div>
+    <div class="secondLine">
+      <button class="btn btn-secondary" id="addItemBtn">Agregar item</button>
+    </div>
+  </header>
+  <main>
+    <div class="data-container">
+      <div class="alerts-area" id="alertsContainer">
+      </div>
+      
+      <div class="items-table">
+        <table id="itemsTable">
+          <tr>
+            <th>C. de barras</th>
+            <th>Item</th>
+            <th>Coste</th>
+            <th>Precio venta</th>
+            <th>Acción</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </main>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebae products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAP6DLVy4dAgWTIFxPtPYcmyLTPQJcdwr0",
+      authDomain: "item-management-project.firebaseapp.com",
+      projectId: "item-management-project",
+      storageBucket: "item-management-project.appspot.com",
+      messagingSenderId: "555331897361",
+      appId: "1:555331897361:web:e0c0324398d359bf7e09b0"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="app.js"></script>
+</body>
+
+</html>
