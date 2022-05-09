@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 :root {
-    --main: #ff3838;
-    --mainShadow: #ff4d4d;
+    --main: #ff4757;
+    --mainShadow: #ff6b81;
+    --secondary: #1e90ff;
+    --secondaryShadow: #70a1ff;
+    --mainBg: #ced6e0;
+    --secondBg: #dfe4ea;
     --mainText: white;
+    --secondText: #2f3542;
+    --secondTxtShadow: #57606f;
     --titleSize: 22pt;
     --subtitleSize: 18pt;
     --contentSize: 14pt;
@@ -14,4 +20,25 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
+}
+
+.btn {
+    padding: .5rem 1rem;
+    font-size: var(--contentSize);
+    text-decoration: none;
+    color: white;
+}
+
+.btn.principal {
+    background-color: var(--main);
+    color: var(--mainText);
+}
+
+.btn.principal:hover {
+    background-color: var(--mainShadow);
+}
+
+.btn.disabled {
+    background-color: var(--secondTxtShadow);
+    cursor: not-allowed;
 }

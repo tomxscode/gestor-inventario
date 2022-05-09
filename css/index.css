@@ -1,5 +1,9 @@
 @import "./general.css";
 
+body {
+    background-color: var(--mainBg);
+}
+
 header {
     background-color: var(--main);
 }
@@ -33,4 +37,67 @@ header {
 
 .navbarList > li > a {
     color: var(--mainText);
+}
+
+.actionsContainer {
+    margin: 2rem 3rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    background-color: var(--secondBg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--secondText);
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.actionTitle {
+    margin-bottom: 2rem;
+    border-bottom: 3px var(--secondTxtShadow) solid;
+    transition: border-bottom .5s linear;
+}
+
+.actionsTitle {
+    font-size: var(--titleSize);
+}
+
+.action {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mainBg);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+}
+
+.headerAction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 3px var(--secondTxtShadow) solid;
+    margin-bottom: 1rem;
+}
+
+.headerAction > .icon > span {
+    font-size: 50pt;
+    font-weight: bold;
+}
+
+.headerAction > .title {
+    font-size: var(--subtitleSize);
+}
+
+.contentAction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contentAction > .description {
+    font-size: var(--contentSize);
+    margin-bottom: 1.5rem;
 }
