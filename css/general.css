@@ -27,10 +27,18 @@
     font-size: var(--contentSize);
     text-decoration: none;
     color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .btn.principal {
     background-color: var(--main);
+    color: var(--mainText);
+}
+
+.btn.principal-inv {
+    background-color: var(--mainShadow);
     color: var(--mainText);
 }
 

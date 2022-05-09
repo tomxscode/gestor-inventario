@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/gestion.css">
     <title>gestion</title>
 </head>
 <body>
@@ -15,14 +17,32 @@
                 </div>
                 <div class="rightBox">
                     <ul class="navbarList">
-                        <li><a href="#">Test</a></li>
-                        <li><a href="#">Test</a></li>
-                        <li><a href="#">Test</a></li>
+                        <li class="btn principal-inv" id="addProductBtn">Agregar producto</li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    <!-- agregar productos -->
+    <div id="addProductModal" class="modal">
+        <span class="close" title="Cerrar" id="closeModal">&times</span>
+        <form class="modal-content" id="addProductForm">
+            <div class="formContainer">
+                <label for="code">Código</label>
+                <input type="text" name="code" id="pCode" placeholder="Ingrese el código del producto" required>
+
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="pName" placeholder="Ingrese el nombre del producto" required>
+
+                <label for="quant">Cantidad</label>
+                <input type="number" name="quant" id="pQuant" placeholder="Ingrese la cantidad inicial" required>
+                <div class="clearFix">
+                    <button type="button" id="productButton" class="btn principal">Agregar</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
     <div class="data-container">
 
@@ -63,5 +83,6 @@
 
     <script src="js/general.js"></script>
     <script src="js/gestion.js"></script>
+    <script src="js/modalProducts.js"></script>
 </body>
 </html>

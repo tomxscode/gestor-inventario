@@ -25,6 +25,9 @@ const getProducts = () => db.collection('products').get();
 const getProduct = (id) => db.collection('products').doc(id).get();
 // ongetitems
 const onGetProducts = (callback) => db.collection('products').onSnapshot(callback);
+const updateProduct = (id, updatedProduct) =>
+    db.collection('products').doc(id).update(updatedProduct);
+const deleteProduct = id => db.collection('products').doc(id).delete();
 
 window.onload = function() {
     // Asignación de nombre de tienda
@@ -49,5 +52,3 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         })
     })
 })
-
-console.log('hola')

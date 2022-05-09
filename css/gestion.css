@@ -1,0 +1,95 @@
+@import "./general.css";
+
+body {
+    background-color: var(--mainBg);
+}
+
+header {
+    background-color: var(--main);
+}
+
+.navContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    color: var(--mainText);
+}
+
+.headerTitle {
+    font-size: var(--titleSize);
+    background-color: var(--mainShadow);
+    padding: 0.5rem;
+    border: 3px solid white;
+}
+
+.navbarList {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.navbarList > li {
+    font-size: var(--contentSize);
+    margin-left: 0.5rem;
+}
+
+.navbarList > li > a {
+    color: var(--mainText);
+}
+
+input[type=text], input[type=number] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background-color: var(--mainText);
+}
+
+input[type=text]:focus, input[type=number]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+button {
+    width: 100%;
+}
+
+.formContainer {
+    padding: 16px;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;/* lo pone encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.76);
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% 3rem 15% 3rem;
+    border: 1px solid #888;
+}
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+}
